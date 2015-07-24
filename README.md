@@ -1,5 +1,5 @@
 # ProGo Jumbotron
-### A WordPress Plugin for inserting a "Jumbotron" full width content area in the ProGo Base masthead header area of the home page.
+### Inserts a "Jumbotron" full width content area in the ProGo Base masthead header area of the home page.
 
 The Jumbotron is designed to promote 1 idea and only 1 idea, at the tip top of a Page, so it is the first thing that catches a visitor's attention. Keep it simple. Sliders are bad.
 Jumbotron post Content will be used as is in whatever theme you have, so if you are using something nice and Bootstrap-supporting like ProGo Base, you may want to start with an idea like
