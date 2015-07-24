@@ -69,7 +69,9 @@ PlaceKittens.
 = 0.1.1 =
 *Release Date - 24th July, 2015*
 
-* Minor maintenance release cleaning up README(s) and plugin Description and comments.
+* Maintenance release
+* mainly cleaning up README(s) and plugin Description and comments.
+* and also adding a filter so that perhaps a Jumbotron could appear on some other page if someone with php inclinations so desired
 
 = 0.1 =
 *Release Date  - 22nd May, 2015*

@@ -69,7 +69,8 @@ At this time, the answer is No. The Jumbotron is designed to promote 1 idea and 
 ### 0.1.1
 *Release Date  - 24th July, 2015*
 
-* Maintenance release cleaning up README(s) and plugin Description and comments.
+* Maintenance release
+* mainly cleaning up README(s) and plugin Description and comments.
 * and also adding a filter so that perhaps a Jumbotron could appear on some other page if someone with php inclinations so desired
 
 ### 0.1
