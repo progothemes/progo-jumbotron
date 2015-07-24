@@ -56,22 +56,41 @@ function progo_jumbotron_post_types() {
 add_action( 'init', 'progo_jumbotron_post_types' );
 
 /**
- * Return the $post of the Jumbotron to load
- * if you are on the front_page
- * Otherwise returns false
+ * Checks whether to try and display a Jumbotron at all
+ * By default just checks is_front_page()
+ * Also runs through a filter for possible future hooks
+ *
+ * 
+ */
+function progo_jumbotron_check() {
+  $show = is_front_page();
+  return apply_filters( 'progo_jumbotron_check', $show );
+}
+
+/**
+ * Uses progo_jumbotron_check above to see whether to load a Jumbotron
+ *
+ * Return false if no load, or the first Jumbotron post if check = true
+ *
+ * Makes use of the following filters :
+ * $args1 = apply_filters( 'progo_jumbotron_load_args', $args1 );
+ * return apply_filters( 'progo_jumbotron_post', $jumbos[0] );
  */
 function progo_jumbotron_load() {
-  if ( is_front_page() ) {
+  if ( progo_jumbotron_check() ) {
     // Find the 1 Jumbotron?!
     $args1 = array(
       'post_type' => 'progo_jumbotron',
       // for now...
       'posts_per_page' => 1,
     );
+    // filter args for get_posts through a possible 'progo_jumbotron_load_args'
+    $args1 = apply_filters( 'progo_jumbotron_load_args', $args1 );
     $jumbos = get_posts( $args1 );
     // and something...
     if ( count( $jumbos ) ) {
-      return $jumbos[0];
+      // filter post output through possible 'progo_jumbotron_post'
+      return apply_filters( 'progo_jumbotron_post', $jumbos[0] );
     }
   } // else
   return false;

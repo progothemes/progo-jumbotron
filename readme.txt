@@ -50,11 +50,11 @@ Yes, I suppose you could just..
 
 `<?php progo_jumbotron_display(); ?>`
 
-.. but only on the front page. Otherwise it won't do anything, at least not right now.
+.. but only on the front page. Otherwise it won't do anything, at least not right now. Unless...
 
 = Can the Jumbotron appear on another page other than the front page? =
 
-At this time, the answer is also No. But maybe in a future version...
+At this time, the answer is now Yes, with custom coding! See comments in progo-jumbotron.php for more.
 
 = Can I have more than 1 Jumbotron with a a slideshow through multiple ones on a single Page? =
 

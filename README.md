@@ -45,11 +45,16 @@ Yes, I suppose you could just..
 
 `<?php progo_jumbotron_display(); ?>`
 
-.. but only on the front page. Otherwise it won't do anything, at least not right now.
+.. but only on the front page. Otherwise it won't do anything, at least not right now. Unless...
 
 ### Can the Jumbotron appear on another page other than the front page?
 
-At this time, the answer is also No. But maybe in a future version...
+At this time, the answer is ~~also No. But maybe in a future version...~~ now Yes, with custom coding! See comments in progo-jumbotron.php for more.
+
+    function progo_jumbotron_check() {
+      $show = is_front_page();
+      return apply_filters( 'progo_jumbotron_check', $show );
+    }
 
 ### Can I have more than 1 Jumbotron with a a slideshow through multiple ones on a single Page?
 
@@ -64,7 +69,8 @@ PlaceKittens.
 ### 0.1.1
 *Release Date  - 24th July, 2015*
 
-* Minor maintenance release cleaning up README(s) and plugin Description and comments.
+* Maintenance release cleaning up README(s) and plugin Description and comments.
+* and also adding a filter so that perhaps a Jumbotron could appear on some other page if someone with php inclinations so desired
 
 ### 0.1
 *Release Date  - 22nd May, 2015*
