@@ -62,7 +62,7 @@ At this time, the answer is No. The Jumbotron is designed to promote 1 idea and 
 
 ### PlaceKittens?
 
-PlaceKittens.
+[PlaceKittens](http://placekitten.com/).
 
 ## Changelog
 
