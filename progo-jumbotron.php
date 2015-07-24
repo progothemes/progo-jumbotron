@@ -2,7 +2,7 @@
 /*
 Plugin Name: ProGo Jumbotron
 Plugin URI: https://github.com/progothemes/progo-jumbotron
-Description: A WordPress Plugin for inserting a "Jumbotron" full width content area in the ProGo Base masthead header area
+Description: Inserts a "Jumbotron" full width content area in the ProGo Base masthead header area of the home page.
 Version: 0.1
 Author: ProGo
 Author URI: http://www.progo.com
