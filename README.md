@@ -61,6 +61,11 @@ PlaceKittens.
 
 ## Changelog
 
+### 0.1.1
+*Release Date  - 24th July, 2015*
+
+* Minor maintenance release cleaning up README(s) and plugin Description and comments.
+
 ### 0.1
 *Release Date  - 22nd May, 2015*
 

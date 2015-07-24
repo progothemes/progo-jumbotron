@@ -3,7 +3,7 @@ Contributors: ProGo
 Tags: jumbotron, bootstrap
 Requires at least: 4.1
 Tested up to: 4.2.2
-Stable tag: 0.1
+Stable tag: 0.1.1
 License: GPLv2 or later
 
 A WordPress Plugin for inserting a "Jumbotron" full width content area in the ProGo Base masthead header area of the home page.
@@ -65,6 +65,11 @@ At this time, the answer is No. The Jumbotron is designed to promote 1 idea and 
 PlaceKittens.
 
 == Changelog ==
+
+= 0.1.1 =
+*Release Date - 24th July, 2015*
+
+* Minor maintenance release cleaning up README(s) and plugin Description and comments.
 
 = 0.1 =
 *Release Date  - 22nd May, 2015*

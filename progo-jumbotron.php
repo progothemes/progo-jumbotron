@@ -3,7 +3,7 @@
 Plugin Name: ProGo Jumbotron
 Plugin URI: https://github.com/progothemes/progo-jumbotron
 Description: Inserts a "Jumbotron" full width content area in the ProGo Base masthead header area of the home page.
-Version: 0.1
+Version: 0.1.1
 Author: ProGo
 Author URI: http://www.progo.com
 License: GPLv2 or later
@@ -26,7 +26,7 @@ function progo_jumbotron_post_types() {
     remove_action('admin_menu', 'progobaseframework_add_admin');
     add_action('admin_menu', 'progobaseframework_add_admin', 9);
   }
-  
+  // register our Jumbotron CPT
   register_post_type( 'progo_jumbotron',
     array(
       'labels' => array(
@@ -47,10 +47,10 @@ function progo_jumbotron_post_types() {
     )
   );
   
-  // inject our Jumbotron
+  // inject our Jumbotron in the "pgb_block_header" area hook
   add_action( 'pgb_block_header', 'progo_jumbotron_display' );
   
-  // remove default ProGo Base header logo & tagline
+  // remove the default ProGo Base header logo & tagline block
   remove_action( 'pgb_block_header', 'pgb_load_block_header' );
 }
 add_action( 'init', 'progo_jumbotron_post_types' );
@@ -78,17 +78,21 @@ function progo_jumbotron_load() {
 }
 
 /**
+ * add_action( 'pgb_block_header', 'progo_jumbotron_display' );
+ *
  * Find the 1 Jumbotron and display it
  */
 function progo_jumbotron_display() {
   // get the jumbotron to show..
   $the_post = progo_jumbotron_load();
+  // that function determines whether or not to show, so if yes, then
   if ( $the_post !== false ) { 
     $the_bg = false;
+    // see if we also show a background image
     if ( has_post_thumbnail( $the_post->ID ) ) {
       $the_bg = wp_get_attachment_url( get_post_thumbnail_id($the_post->ID) );
     }
-  
+    // and output the appropriate HTML
     ?>
     <div id="problogger-jumbotron">
       <div class="jumbotron" <?php if ( $the_bg !== false ) { echo 'style="background: url(' . $the_bg . ') no-repeat 50% 50%; background-size: cover;"'; } ?>>
@@ -108,9 +112,14 @@ function progo_jumbotron_display() {
  */
 function progo_jumbotron_add_adminbar_menu() {
 	global $wp_admin_bar;
-  
+  // only add the link for user(s) with the appropriate permissions
 	if ( current_user_can( 'edit_theme_options' ) ) {
-    $in_menu = function_exists('progobaseframework_add_adminbar_menu') ? 'progobase-theme-options' : 'appearance';
+    // add our link to the Appearance menu
+    $in_menu = 'appearance';
+    // unless a ProGo menu is a better place to put it
+    if ( function_exists('progobaseframework_add_adminbar_menu') ) {
+      $in_menu = 'progobase-theme-options' : 
+    }
     
 		$wp_admin_bar->add_node( array(
 			'parent' => $in_menu,
